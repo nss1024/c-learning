@@ -1,0 +1,6 @@
+﻿  c_enums.c
+C:\dev\C\c_enums\c_enums.c(23,12): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'int'
+C:\dev\C\c_enums\c_enums.c(23,12): warning C4313: 'printf': '%s' in format string conflicts with argument 1 of type 'int'
+C:\dev\C\c_enums\c_enums.c(54,24): error C2079: 'context' uses undefined struct 'SmtpContext'
+C:\dev\C\c_enums\c_enums.c(59,21): warning C4047: 'function': 'SmtpContext *' differs in levels of indirection from 'int'
+C:\dev\C\c_enums\c_enums.c(59,21): warning C4024: 'processHelo': different types for formal and actual parameter 1
