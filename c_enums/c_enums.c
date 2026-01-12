@@ -1,6 +1,7 @@
 
 
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef enum {
     STATE_NONE,
@@ -16,11 +17,10 @@ typedef struct {
     SmtpState state;
 } SmtpContext;
 
-void processHelo(SmtpContext*c) {
+void processHelo(SmtpContext *c) {
     c->state=STATE_HELO;
-    printf("%s\n", "HELO received!");
-    printf("%s\n", "Current state: ");
-    printf("%s\n", c->state);
+    printf("%s\n", "HELO received!");    
+    printf("Current state:  %d\n", c->state);
 }
 
 void processMail() {
@@ -51,8 +51,13 @@ void handleUnknown() {
 
 int main()
 {
-    struct SmtpContext context = {STATE_NONE};
-    SmtpState s = 0;
+    SmtpContext* context = malloc(sizeof(SmtpContext));
+    if (context == NULL) {
+        fprintf(stderr, "malloc failed\n");
+        exit(1);
+    }
+    context->state = STATE_NONE;
+    SmtpState s = 1;
 
     switch (s) {
     case STATE_HELO:
@@ -76,7 +81,7 @@ int main()
     default:
         break;
     }
-
-
+    free(context);
+    return 0;
 }
 
