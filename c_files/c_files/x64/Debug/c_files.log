@@ -1,0 +1,3 @@
+﻿  c_files.c
+C:\dev\C\c_files\c_files.c(15,16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  c_files.vcxproj -> C:\dev\C\c_files\x64\Debug\c_files.exe
